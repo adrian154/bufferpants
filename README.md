@@ -1,8 +1,8 @@
-# bufferio
+# bufferpants
 
-bufferio is an extremely simple interface for reading and writing sequential binary data in NodeJS. 
+bufferpants lets you put a pair of pants onto your buffers. It is an extremely simple interface for reading and writing sequential binary data in NodeJS. 
 
-bufferio does *not* implement a serialization protocol for structured data, though you could definitely use it to implement such functionality.
+bufferpants does *not* implement a serialization protocol for structured data, though you could definitely use it to implement such functionality.
 
 # Example
 
