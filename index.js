@@ -9,24 +9,24 @@ class BufferBuilder {
     }
 
     // this is the *perfect* usecase for allocUnsafe!
-    writeBigInt64BE(value)  { const buf = Buffer.allocUnsafe(8); buf.writeBigInt64BE(value); this.buffers.push(value); }
-    writeBigInt64LE(value)  { const buf = Buffer.allocUnsafe(8); buf.writeBigInt64LE(value); this.buffers.push(value); }
-    writeBigUInt64BE(value) { const buf = Buffer.allocUnsafe(8); buf.writeBigUInt64BE(value); this.buffers.push(value); }
-    writeBigUInt64LE(value) { const buf = Buffer.allocUnsafe(8); buf.writeBigUInt64LE(value); this.buffers.push(value); }
-    writeDoubleBE(value)    { const buf = Buffer.allocUnsafe(8); buf.writeDoubleBE(value); this.buffers.push(value); }
-    writeDoubleLE(value)    { const buf = Buffer.allocUnsafe(8); buf.writeDoubleLE(value); this.buffers.push(value); }
-    writeFloatBE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeFloatBE(value); this.buffers.push(value); }
-    writeFloatLE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeFloatLE(value); this.buffers.push(value); }
-    writeInt8(value)        { const buf = Buffer.allocUnsafe(1); buf.writeInt8(value); this.buffers.push(value); }
-    writeInt16BE(value)     { const buf = Buffer.allocUnsafe(2); buf.writeInt16BE(value); this.buffers.push(value); }
-    writeInt16LE(value)     { const buf = Buffer.allocUnsafe(2); buf.writeInt16LE(value); this.buffers.push(value); }
-    writeInt32BE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeInt32BE(value); this.buffers.push(value); }
-    writeInt32LE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeInt32LE(value); this.buffers.push(value); }
-    writeUInt8(value)       { const buf = Buffer.allocUnsafe(1); buf.writeUInt8(value); this.buffers.push(value); }
-    writeUInt16BE(value)    { const buf = Buffer.allocUnsafe(2); buf.writeUInt16BE(value); this.buffers.push(value); }
-    writeUInt16LE(value)    { const buf = Buffer.allocUnsafe(2); buf.writeUInt16LE(value); this.buffers.push(value); }
-    writeUInt32BE(value)    { const buf = Buffer.allocUnsafe(4); buf.writeUInt32BE(value); this.buffers.push(value); }
-    writeUInt32LE(value)    { const buf = Buffer.allocUnsafe(4); buf.writeUInt32LE(value); this.buffers.push(value); }
+    writeBigInt64BE(value)  { const buf = Buffer.allocUnsafe(8); buf.writeBigInt64BE(value); this.buffers.push(buf); }
+    writeBigInt64LE(value)  { const buf = Buffer.allocUnsafe(8); buf.writeBigInt64LE(value); this.buffers.push(buf); }
+    writeBigUInt64BE(value) { const buf = Buffer.allocUnsafe(8); buf.writeBigUInt64BE(value); this.buffers.push(buf); }
+    writeBigUInt64LE(value) { const buf = Buffer.allocUnsafe(8); buf.writeBigUInt64LE(value); this.buffers.push(buf); }
+    writeDoubleBE(value)    { const buf = Buffer.allocUnsafe(8); buf.writeDoubleBE(value); this.buffers.push(buf); }
+    writeDoubleLE(value)    { const buf = Buffer.allocUnsafe(8); buf.writeDoubleLE(value); this.buffers.push(buf); }
+    writeFloatBE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeFloatBE(value); this.buffers.push(buf); }
+    writeFloatLE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeFloatLE(value); this.buffers.push(buf); }
+    writeInt8(value)        { const buf = Buffer.allocUnsafe(1); buf.writeInt8(value); this.buffers.push(buf); }
+    writeInt16BE(value)     { const buf = Buffer.allocUnsafe(2); buf.writeInt16BE(value); this.buffers.push(buf); }
+    writeInt16LE(value)     { const buf = Buffer.allocUnsafe(2); buf.writeInt16LE(value); this.buffers.push(buf); }
+    writeInt32BE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeInt32BE(value); this.buffers.push(buf); }
+    writeInt32LE(value)     { const buf = Buffer.allocUnsafe(4); buf.writeInt32LE(value); this.buffers.push(buf); }
+    writeUInt8(value)       { const buf = Buffer.allocUnsafe(1); buf.writeUInt8(value); this.buffers.push(buf); }
+    writeUInt16BE(value)    { const buf = Buffer.allocUnsafe(2); buf.writeUInt16BE(value); this.buffers.push(buf); }
+    writeUInt16LE(value)    { const buf = Buffer.allocUnsafe(2); buf.writeUInt16LE(value); this.buffers.push(buf); }
+    writeUInt32BE(value)    { const buf = Buffer.allocUnsafe(4); buf.writeUInt32BE(value); this.buffers.push(buf); }
+    writeUInt32LE(value)    { const buf = Buffer.allocUnsafe(4); buf.writeUInt32LE(value); this.buffers.push(buf); }
     writeBuffer(buffer)     { if(!Buffer.isBuffer(buffer)) throw new Error("Not a buffer"); this.buffers.push(buffer); }
 
 }
