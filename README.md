@@ -7,11 +7,13 @@ bufferpants does *not* implement a serialization protocol for structured data, t
 # Example
 
 ```js
+const {BufferBuilder, BufferReader} = require("bufferpants");
+
 // create a length prefixed string
 const builder = new BufferBuilder();
 const myStr = Buffer.from("Goodbye, cruel world.", "utf-8");
-builder.writeUInt32LE(myStr.length);
-builder.writeBuffer(myStr);
+builder.writeUInt32LE(myStr.length)
+       .writeBuffer(myStr);
 const buf = builder.build();
 
 // read the string back
