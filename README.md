@@ -58,6 +58,8 @@ BufferReader provides numerous methods for reading integer types of all shapes a
 * `readUInt32LE()`
 * `readBuffer(length)`
     * The returned buffer directly references the original buffer, so any operations on the result of `reader.readBuffer()` will propagate back to the original buffer. You may need to make a copy of the returned buffer.
+* `seek(position)`
+    * Move the reader to a certain offset within the buffer. Throws an error if the requested position is beyond the end of the buffer. Prefer this method to manually setting the `position` property.
 
 # BufferBuilder
 

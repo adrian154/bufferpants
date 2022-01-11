@@ -38,12 +38,16 @@ class BufferReader {
         this.position = 0;
     }
 
-    move(increment) {
-        if(increment + this.position > this.buffer.length) {
-            throw new Error("Not enough bytes available!");
+    seek(position) {
+        if(position > this.buffer.length) {
+            throw new Error("Can't seek to position beyond end of buffer.");
         }
+        this.position = position;
+    }
+
+    move(increment) {
         const before = this.position;
-        this.position += increment;
+        this.seek(this.position + increment);
         return before;
     }
 

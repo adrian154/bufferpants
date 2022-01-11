@@ -7,5 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adrian Z",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrian154/bufferio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adrian154/bufferio/issues"
+  },
+  "homepage": "https://github.com/adrian154/bufferio#readme",
+  "keywords": [
+    "buffer",
+    "buffer-reader",
+    "buffer-builder"
+  ]
 }
