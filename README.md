@@ -98,5 +98,6 @@ BufferBuilder provides numerous methods for writing integer types of all shapes 
 * `writeUInt32BE()`
 * `writeUInt32LE()`
 * `writeBuffer(buffer)`
+    * All the above methods return the original BufferBuilder method, allowing these methods to be chained.
 * `build()`
     * Returns the buffer built by the write methods.
