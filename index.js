@@ -51,6 +51,10 @@ class BufferReader {
         return before;
     }
 
+    end() {
+        return this.position == this.buffer.length;
+    }
+
     readBigInt64BE()   { return this.buffer.readBigInt64BE(this.move(8)); }
 	readBigInt64LE()   { return this.buffer.readBigInt64LE(this.move(8)); }
 	readBigUInt64BE()  { return this.buffer.readBigUInt64BE(this.move(8)); }
