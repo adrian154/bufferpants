@@ -55,25 +55,26 @@ class BufferReader {
         return this.position == this.buffer.length;
     }
 
-    readBigInt64BE()   { return this.buffer.readBigInt64BE(this.move(8)); }
-	readBigInt64LE()   { return this.buffer.readBigInt64LE(this.move(8)); }
-	readBigUInt64BE()  { return this.buffer.readBigUInt64BE(this.move(8)); }
-	readBigUInt64LE()  { return this.buffer.readBigUInt64LE(this.move(8)); }
-	readDoubleBE()     { return this.buffer.readDoubleBE(this.move(8)); }
-	readDoubleLE()     { return this.buffer.readDoubleLE(this.move(8)); }
-	readFloatBE()      { return this.buffer.readFloatBE(this.move(4)); }
-	readFloatLE()      { return this.buffer.readFloatLE(this.move(4)); }
-	readInt8()         { return this.buffer.readInt8(this.move(1)); }
-	readInt16BE()      { return this.buffer.readInt16BE(this.move(2)); }
-	readInt16LE()      { return this.buffer.readInt16LE(this.move(2)); }
-	readInt32BE()      { return this.buffer.readInt32BE(this.move(4)); }
-	readInt32LE()      { return this.buffer.readInt32LE(this.move(4)); }
-	readUInt8()        { return this.buffer.readUInt8(this.move(1)); }
-	readUInt16BE()     { return this.buffer.readUInt16BE(this.move(2)); }
-	readUInt16LE()     { return this.buffer.readUInt16LE(this.move(2)); }
-	readUInt32BE()     { return this.buffer.readUInt32BE(this.move(4)); }
-	readUInt32LE()     { return this.buffer.readUInt32LE(this.move(4)); }
-    readBuffer(length) { return this.buffer.slice(this.move(length), this.position); }
+    readBigInt64BE(offset)  { return this.buffer.readBigInt64BE(offset ?? this.move(8)); }
+	readBigInt64LE(offset)  { return this.buffer.readBigInt64LE(offset ?? this.move(8)); }
+	readBigUInt64BE(offset) { return this.buffer.readBigUInt64BE(offset ?? this.move(8)); }
+	readBigUInt64LE(offset) { return this.buffer.readBigUInt64LE(offset ?? this.move(8)); }
+	readDoubleBE(offset)    { return this.buffer.readDoubleBE(offset ?? this.move(8)); }
+	readDoubleLE(offset)    { return this.buffer.readDoubleLE(offset ?? this.move(8)); }
+	readFloatBE(offset)     { return this.buffer.readFloatBE(offset ?? this.move(4)); }
+	readFloatLE(offset)     { return this.buffer.readFloatLE(offset ?? this.move(4)); }
+	readInt8(offset)        { return this.buffer.readInt8(offset ?? this.move(1)); }
+	readInt16BE(offset)     { return this.buffer.readInt16BE(offset ?? this.move(2)); }
+	readInt16LE(offset)     { return this.buffer.readInt16LE(offset ?? this.move(2)); }
+	readInt32BE(offset)     { return this.buffer.readInt32BE(offset ?? this.move(4)); }
+	readInt32LE(offset)     { return this.buffer.readInt32LE(offset ?? this.move(4)); }
+	readUInt8(offset)       { return this.buffer.readUInt8(offset ?? this.move(1)); }
+	readUInt16BE(offset)    { return this.buffer.readUInt16BE(offset ?? this.move(2)); }
+	readUInt16LE(offset)    { return this.buffer.readUInt16LE(offset ?? this.move(2)); }
+	readUInt32BE(offset)    { return this.buffer.readUInt32BE(offset ?? this.move(4)); }
+    readUInt32LE(offset)    { return this.buffer.readUInt32LE(offset ?? this.move(4)); }
+    readBuffer(length, offset) { return this.buffer.slice(offset ?? this.move(length), this.position); }
+
 }
 
 module.exports = {BufferBuilder, BufferReader};

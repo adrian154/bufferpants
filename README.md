@@ -40,26 +40,28 @@ BufferReader provides numerous methods for reading integer types of all shapes a
 
 **BE** = big-endian, **LE** = little-endian
 
-* `readBigInt64BE()`
-* `readBigInt64LE()`
-* `readBigUInt64BE()`
-* `readBigUInt64LE()`
-* `readDoubleBE()`
-* `readDoubleLE()`
-* `readFloatBE()`
-* `readFloatLE()`
-* `readInt8()`
-* `readInt16BE()`
-* `readInt16LE()`
-* `readInt32BE()`
-* `readInt32LE()`
-* `readUInt8()`
-* `readUInt16BE()`
-* `readUInt16LE()`
-* `readUInt32BE()`
-* `readUInt32LE()`
-* `readBuffer(length)`
+* `readBigInt64BE(offset?)`
+* `readBigInt64LE(offset?)`
+* `readBigUInt64BE(offset?)`
+* `readBigUInt64LE(offset?)`
+* `readDoubleBE(offset?)`
+* `readDoubleLE(offset?)`
+* `readFloatBE(offset?)`
+* `readFloatLE(offset?)`
+* `readInt8(offset?)`
+* `readInt16BE(offset?)`
+* `readInt16LE(offset?)`
+* `readInt32BE(offset?)`
+* `readInt32LE(offset?)`
+* `readUInt8(offset?)`
+* `readUInt16BE(offset?)`
+* `readUInt16LE(offset?)`
+* `readUInt32BE(offset?)`
+* `readUInt32LE(offset?)`
+* `readBuffer(length, offset?)`
     * The returned buffer directly references the original buffer, so any operations on the result of `reader.readBuffer()` will propagate back to the original buffer. You may need to make a copy of the returned buffer.
+* **All read functions:**
+    * If the `offset` parameter is provided the value at `offset` is read instead of the current position of the reader. However, the reader's position is not changed.
 * `seek(position)`
     * Move the reader to a certain offset within the buffer. Throws an error if the requested position is beyond the end of the buffer. Prefer this method to manually setting the `position` property.
 * `end()`
