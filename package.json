@@ -1,6 +1,6 @@
 {
   "name": "bufferpants",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An extremely simple interface for reading and writing binary data",
   "main": "index.js",
   "scripts": {
